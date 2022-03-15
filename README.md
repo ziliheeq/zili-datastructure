@@ -12,10 +12,10 @@ indicator-sysmonitor &
 cpu: {cpu} mem: {mem} N:{net}
 ```
 
-> 软件包国内镜像源
+# 软件包国内镜像源
 
 [python 软件包](https://registry.npmmirror.com/binary.html?path=python/)
 
 
 # 开源电子书
-[pro git](https://git-scm.com/book/zh/v2)
+1. [pro git](https://git-scm.com/book/zh/v2)
