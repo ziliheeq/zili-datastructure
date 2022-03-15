@@ -18,4 +18,4 @@ cpu: {cpu} mem: {mem} N:{net}
 
 
 # 开源电子书
-1. [pro git](https://git-scm.com/book/zh/v2)
+1. [pro git](https://git-scm.com/book/zh/v2) -- [笔记](notes/progit.md)
