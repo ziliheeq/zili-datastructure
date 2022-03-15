@@ -13,4 +13,5 @@ cpu: {cpu} mem: {mem} N:{net}
 ```
 
 > 软件包国内镜像源
+
 [python 软件包](https://registry.npmmirror.com/binary.html?path=python/)
