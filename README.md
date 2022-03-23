@@ -37,6 +37,11 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 }
 ```
 
+> 查看局域网外网地址
+```
+curl ifconfig.me
+```
+
 # 软件包国内镜像源
 
 [python 软件包](https://registry.npmmirror.com/binary.html?path=python/)
