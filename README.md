@@ -42,6 +42,10 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 curl ifconfig.me
 ```
 
+> 设置 linux 空闲登录时间
+
+export TMOUT=900
+
 # 软件包国内镜像源
 
 [python 软件包](https://registry.npmmirror.com/binary.html?path=python/)
