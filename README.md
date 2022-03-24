@@ -46,6 +46,17 @@ curl ifconfig.me
 
 export TMOUT=900
 
+> 配置 vscode [win] 插件位置
+
+默认位置：用户名/.vscode/extensions/
+```powershell
+code --list-extensions
+code --extensions-dir "新的插件位置"
+# 剪切插件到新的路径下面
+# 配置快捷方式
+"E:\newwindows\Microsoft VS Code\Code.exe" --extensions-dir "E:\vscodeextension"
+```
+
 # 软件包国内镜像源
 
 [python 软件包](https://registry.npmmirror.com/binary.html?path=python/)
