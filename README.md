@@ -69,6 +69,15 @@ code --extensions-dir "新的插件位置"
 # 学习推荐
 
 [brendan gregg](https://www.brendangregg.com/books.html)
+
+| 序号 | 分类 | 书籍 | 说明 |
+| :--: | ---  |  --- | --- |
+| 1  | C Programming |The C Programming Language 2nd Ed. - Brian W. Kernighan, Dennis M. Ritchie (Prentice Hall, 1988) | |
+| 2  | C Programming | Expert C Programming - Peter van der Linden (Prentice Hall, 1994) | |
+
+
+
+
 ```
 Systems Performance
 Systems Performance 2nd edition - Brendan Gregg (Addison-Wesley, 2021)
@@ -127,9 +136,7 @@ The Art of Unix Programming - Eric S. Raymond (Addison-Wesley, 2003)
 The Practice of Programming - Brian Kernighan, Rob Pike (Addison-Wesley, 1999)
 The Unix Programming Environment - Brian Kernighan, Rob Pike (Prentice Hall, 1984)
 The Mythical Man-Month - Frederick P. Brooks (Addison-Wesley, 1995/1975)
-C Programming
-Expert C Programming - Peter van der Linden (Prentice Hall, 1994)
-The C Programming Language 2nd Ed. - Brian W. Kernighan, Dennis M. Ritchie (Prentice Hall, 1988)
+
 Perl Programming
 Anything by Randal Schwartz
 Shell Scripting
