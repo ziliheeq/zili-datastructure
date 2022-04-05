@@ -197,6 +197,7 @@ pacman -Ss 软件名
 pacman -Rsn 软件名
 
 ```
+[arch 使用指南](https://arch.icekylin.online/)
 
 删除用户`userdel -r 用户名`
 
