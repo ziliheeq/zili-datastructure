@@ -225,6 +225,7 @@ unlock_time：锁定时间，单位秒。
 或者直接置空 /run/faillock 目录下被锁定的用户对应的锁定文件：
  dd if=/dev/null of=/run/faillock/username 
 ```
+[arch bluetooth](https://www.cnblogs.com/mc-r/p/11253634.html)
 
 # 工具
 [base64 在线编码解码](https://base64.us/)
