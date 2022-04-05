@@ -162,5 +162,76 @@ Snakes in Suits - Paul Babiak, Robert D. Hare (Harper Business, 2007)
 
 ```
 
-删除用户
-userdel -r haha
+
+# 安装 Arch Linux
+[参考一](https://zhuanlan.zhihu.com/p/433920079)
+
+[参考二](https://www.bilibili.com/read/cv6678227?from=search&spm_id_from=333.337.0.0)
+
+[git代理下载](https://ghproxy.com/)
+
+[git 使用token作为密码登录](https://blog.csdn.net/sinat_36728518/article/details/119733175)
+
+[git clone 登录说明](https://blog.csdn.net/qq_39642801/article/details/120467176)
+
+git 设置登录缓存: `git config --global credential.helper cache`
+
+git 取消登录缓存：`git config --global --unset credential.helper`
+
+git 配置
+```sh
+# 生成秘钥
+ssh-keygen -t rsa -C "heziliorg@163.com"
+ 
+git config --[global|local] user.name "用户名"
+git config --[global|local] user.email "邮箱"
+```
+## 包管理
+pacman
+```sh
+# 安装
+pacman -S 软件名
+# 搜索
+pacman -Ss 软件名
+# 卸载
+pacman -Rsn 软件名
+
+```
+
+删除用户`userdel -r 用户名`
+
+[登录失败策略](https://cloud.tencent.com/developer/article/1959542)
+```
+2.1 相邻两次登录间隔
+Arch Linux 默认在一次登录失败后，需要等待一段时间的延迟才能进行下一次的登录，默认设置下个人感觉还可以接受。如果需要修改，则可以在配置文件 /etc/pam.d/system-login 中增加以下一行设定：
+
+auth optional pam_faildelay.so delay=4000000
+上述设定是 4 秒，如果需要其它时间，只需修改 delay 字段，它的单位是毫秒。
+
+2.2 登录失败次数和锁定时间
+Arch Linux 默认在 15 分钟内登录失败 3 次就锁定 10 分钟，可以修改 /etc/security/faillock.conf 来更改默认设定，主要修改其中三个字段：
+
+deny：登录失败次数；
+fail_interval：计数周期，单位秒；
+unlock_time：锁定时间，单位秒。
+3. 解除锁定
+如果被锁定了，除了重启，其实也可以通过以下方法来解除锁定：
+
+ 如果你除了当前登录窗口还有其它登录窗口，比如 tty2、tty3 等，且至少有一个已经成功登录了当前账号，然后已登录的 tty 终端解除当前账号的限制；或者没有其它已登录窗口，仍可以通过 root 帐号登录 tty 终端，然后用 root 帐号解除当前账号的限制：
+
+ faillock --reset --user username 
+
+或者直接置空 /run/faillock 目录下被锁定的用户对应的锁定文件：
+ dd if=/dev/null of=/run/faillock/username 
+```
+
+# 工具
+[base64 在线编码解码](https://base64.us/)
+
+[json 格式化](https://www.json.cn/)
+
+[fq国际机场](https://net.balala.work/user/account)
+
+[qv2ray](https://qv2ray.net/lang/zh/)
+
+[qv2ray-core](https://github.com/v2fly/v2ray-core/releases)
