@@ -161,3 +161,6 @@ The No Asshole Rule - Robert I. Sutton (Business Plus, 2010)
 Snakes in Suits - Paul Babiak, Robert D. Hare (Harper Business, 2007)
 
 ```
+
+删除用户
+userdel -r haha
