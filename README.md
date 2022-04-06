@@ -187,7 +187,7 @@ git config --[global|local] user.name "用户名"
 git config --[global|local] user.email "邮箱"
 ```
 ## 包管理
-pacman
+[pacman](https://wiki.archlinux.org/title/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 ```sh
 # 安装
 pacman -S 软件名
