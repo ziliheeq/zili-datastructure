@@ -62,9 +62,10 @@ code --extensions-dir "新的插件位置"
 [python 软件包](https://registry.npmmirror.com/binary.html?path=python/)
 
 
-# 开源电子书
+# 学习笔记
 1. [pro git](https://git-scm.com/book/zh/v2) -- [笔记](notes/progit.md)
 
+2. [python tutorial](https://docs.python.org/3/tutorial/introduction.html#numbers) -- [笔记](notes/python.md)
 
 # 学习推荐
 
