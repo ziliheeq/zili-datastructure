@@ -42,6 +42,40 @@ git checkout -B [分支名称]
 
 6 然后切换分支即可：git checkout dev20181018
 
+删除本地分支`git branch -d 分支名` 或者`git branch -D 分支名` 强制删除分支
+
+删除远程分支`git push origin --delete 分支名称`，不用添加`origin`，只用分支名称
+
+查看当前分支提交日志`git log`， 查看简要日志`git log --oneline`， windows 过滤日志`git log --oneline | findstr '过滤文字'`
+
+## 日志
+`git log`查看commit日志。
+
+`git log --oneline`只显示一行提交注释日志。
+
+`git log -p`显示修改内容日志。
+
+`git log -p -2`显示两次commit的修改内容日志。
+
+`git log --stat`显示缩略的日志。
+
+`git log --pretty=[oneline, short, full]`重新格式化显示日志。
+
+`git log --pretty=format:"%h - %an, %ar : %s"`自定义格式化显示日志。
+
+![image](https://user-images.githubusercontent.com/35592711/169473574-3dc4741c-614a-4e27-b24a-701695c4e6df.png)
+
+`git log --graph`图形显示分支进度。
+
+`git log --grep 过滤字符`过滤指定字符日志。
+
+`git log --since=2.weeks`指定日期。
+
+`git log -- path/to/file`指定文件的日志，同时可以组合上述参数。
+
+
+## 回滚
+
 
 # 第 10 章
 创建一个新的对象，并从标准输入读入数据写入文件 .git/objects 中
