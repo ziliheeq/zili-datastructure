@@ -69,6 +69,46 @@ python 的 [string 内存](https://rushter.com/blog/python-strings-and-memory/)
 
 
 ## 列表——lists
+1. 空列表：a = []
+2. 联合：b = [1], a + b --> `[1]`
+3. 切片(slice)：列表的切片是[浅拷贝(shallow copy)](https://docs.python.org/3/library/copy.html#shallow-vs-deep-copy)
+
+浅拷贝或者深拷贝只是对组合对象来考虑。
+
+> 浅拷贝——shallow copy
+```
+A shallow copy constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original.
+
+浅拷贝构造一个新的组合类型，并且将指向原先组合对象的引用放进去。【所以并不是新构建的对象拥有原先的一个副本，只是一个索引而已】
+```
+> 深拷贝——deep copy
+```
+A deep copy constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original.
+
+深拷贝构造一个新的组合类型，并且将原先对象拥有的元素完全的逐一拷贝到新对象中。
+```
+深拷贝和浅拷贝的区别示例
+```python
+# ----------浅拷贝-------------
+# list 切片，赋值都是浅拷贝
+a = [1, 2, 3, 5]
+b = a
+# b = [1, 2, 3, 5]
+# 赋值
+b[2] = 333
+# b = [1, 2, 333, 5]
+# a = [1, 2, 333, 5] ---> a 也跟着改变
+
+# ----------深拷贝-------------
+import copy
+c = copy.deepcopy(a)
+# c = [1, 2, 333, 5]
+c[1] = 222
+# c = [1, 222, 333, 5]
+# a = [1, 2, 333, 5] ---> a 未改变
+
+# copy.copy() 方法仍是浅拷贝
+```
 
 ## 转换
 数字-->字符串：`str(34)`
