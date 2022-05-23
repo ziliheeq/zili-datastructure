@@ -70,3 +70,6 @@ python 的 [string 内存](https://rushter.com/blog/python-strings-and-memory/)
 
 ## 列表——lists
 
+## 转换
+数字-->字符串：`str(34)`
+
