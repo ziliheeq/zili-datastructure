@@ -44,3 +44,18 @@ for (i = 0; i < n; ++i) {
     }
 }
 ```
+---
+线性表：**零个或多个数据元素的有限序列**
+
+常见操作：
+- InitList(\*L): 初始化，建立一个空表
+- ListEmpty(L): 线性表为空返回`true`
+- ClearList(\*L): 清空线性表
+- GetElem(L, i, \*e): 将线性表中第 i 个元素返回给 e
+- LocateElem(L, e): 在线性表 L 中，查找与给定值 e 相等的元素，查找成功——序号；否则返回失败
+- ListInsert(\*L, i, e): 在线性表中第 i 个位置插入新元素 e
+- ListDelete(\*L, i, \*e): 删除线性表中第 i 个位置元素，并用 e 作为其返回值
+- ListLength(L): 返回线性表 L 的元素个数
+
+
+
