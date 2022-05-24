@@ -163,8 +163,37 @@ if __name__ == '__main__':
 ```
 ![image](https://user-images.githubusercontent.com/35592711/169952598-78bcf399-8068-46f3-8fec-7b66eae7651d.png)
 
+## 控制流工具
+1. 条件语句
+```python
+a = 11
+if a < 1:
+    print("a<1")
+elif a < 11 and a >=1:
+    print("a < 11")
+elif a >= 11 and a < 20:
+    print("a >= 11")
+else:
+    print("a >=20")
+```
+2. 布尔值--boolean
+`True`、`False`
+
+3. 三元表达式
+```python
+# a if 条件 else b 
+222 if True else 111 # 222
+'true' if True else 'false'  # 'true'
+'true' if False else 'false' # 'false'
+```
+
 
 ## 转换
 数字-->字符串：`str(34)`
 
 字符-->列表：`list("hello") --> ['h', 'e', 'l', 'l', 'o']
+
+
+## 常用方法
+1. 判断变量/值类型——`type`
+type(True) # <class 'bool'>
