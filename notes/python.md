@@ -141,6 +141,9 @@ void swap(int* a, int* b){
 [第一个函数](https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming)
 ```python
 # 斐波那契数列：1, 1, 2, 3, 5, 8, 13, 21, 34, 55...[前两个值相加]
+# 函数功能--传入一个最大值，序列中最大值要小于此值
+# 返回一个list
+
 def fibonacci(max):
     a, b = 1, 1
     res = [a, b]
