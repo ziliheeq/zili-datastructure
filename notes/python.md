@@ -111,6 +111,142 @@ c[1] = 222
 ```
 类用户要定义自己的拷贝实现方式，需要定义浅拷贝方法`__copy__()`和深拷贝方法`__deepcopy__()`
 
+4. 添加元素`append`
+```python
+a = [1, 3, 4]
+a.append(44) # a  = [1, 3, 4, 44]
+```
+5. 嵌套-->`[[1, 2, 3], [2, 3], 4]`; `a[0][1]=2`
+
+6. 长度--> len([1, 3, 4]) --> 3
+
+## 函数
+python 交换两个值
+```python
+# python
+a = 100
+b = 200
+a, b = b, a
+# a = 200, b = 100
+```
+```c
+/* c lang */
+/* 需要中间变量 c */
+void swap(int* a, int* b){
+    int c = *a;
+    *a = *b;
+    *b = c;
+}
+```
+[第一个函数](https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming)
+```python
+# 斐波那契数列：1, 1, 2, 3, 5, 8, 13, 21, 34, 55...[前两个值相加]
+# 函数功能--传入一个最大值，序列中最大值要小于此值
+# 返回一个list
+
+def fibonacci(max):
+    a, b = 1, 1
+    res = [a, b]
+    while( a+b < max):
+        a, b = b, a+b
+        res.append(b)
+ 
+    # 返回一个list
+    return res
+
+# 将 python 文件[.py]直接执行，这条判断为真
+# 会执行其下条件
+if __name__ == '__main__':
+    # __name__ 为python自身定义全局变量
+    print(__name__)
+    print(fibonacci(25))
+```
+![image](https://user-images.githubusercontent.com/35592711/169952598-78bcf399-8068-46f3-8fec-7b66eae7651d.png)
+
+## 控制流工具
+1. 条件语句
+```python
+a = 11
+if a < 1:
+    print("a<1")
+elif a < 11 and a >=1:
+    print("a < 11")
+elif a >= 11 and a < 20:
+    print("a >= 11")
+else:
+    print("a >=20")
+```
+2. 布尔值--boolean
+
+`True`、`False`，此两个为python关键字，不能赋值
+
+3. 三元表达式
+```python
+# a if 条件 else b 
+222 if True else 111 # 222
+'true' if True else 'false'  # 'true'
+'true' if False else 'false' # 'false'
+```
+4. 布尔运算符
+`not` 运算符--可以用在条件语句中作为反向判断
+```python
+not 0 # True
+not 1 # False
+not 3 # False
+a = [1, 2] 
+not a # False
+b = [] 
+not b # True
+c = ""
+not c # True
+d = "hello"
+not d # False
+not True # False
+not False # True
+```
+`and` -- 和，A and B, A 和 B 同时为真是才为真
+
+`or`  -- 或，A or B, A 和 B 中一个为真就为真
+
+`==`  -- 判断是否相等
+
+`!=`  -- 判断是否不等
+
+`>, <, >=, <=`  -- 大小判断
+
+`is`：x is x 是`True`，x is y 如果 x 和 y 是同一个对象则是`True`
+
+浅拷贝是同一个对象
+![image](https://user-images.githubusercontent.com/35592711/169959957-756e1174-9728-4231-8985-9bcd832d458d.png)
+
+深拷贝不是同一个对象
+![image](https://user-images.githubusercontent.com/35592711/169959996-da0db2d2-6666-4a9d-af8a-74bd8649bcaf.png)
+
+`in`: 判断是否在集合中
+![image](https://user-images.githubusercontent.com/35592711/169969408-fc695035-4637-4923-9f78-96f1b675773f.png)
+
+另：用在`for`循环遍历使用
+```python
+# list
+for i in [1,2, 3,4]:
+    print(i)
+# 1, 2, 3, 4
+
+# 自动生成的list，range()函数也和切片类似，range([开始索引包括],[结束索引不包括],[间隔])
+# range(1, 10, 2) --> 1, 3, 5, 7, 9
+for i in range(10):
+    print(i)
+# 0, 1, 2, 3, ..., 9
+
+
+```
 ## 转换
 数字-->字符串：`str(34)`
 
+字符-->列表：`list("hello") --> ['h', 'e', 'l', 'l', 'o']
+
+
+## 常用方法
+1. 判断变量/值类型——`type`
+
+`type(True)`--> <class 'bool'>
