@@ -177,7 +177,8 @@ else:
     print("a >=20")
 ```
 2. 布尔值--boolean
-`True`、`False`
+
+`True`、`False`，此两个为python关键字，不能赋值
 
 3. 三元表达式
 ```python
@@ -186,7 +187,22 @@ else:
 'true' if True else 'false'  # 'true'
 'true' if False else 'false' # 'false'
 ```
-
+4. `not` 运算符
+```python
+not 0 # True
+not 1 # False
+not 3 # False
+a = [1, 2] 
+not a # False
+b = [] 
+not b # True
+c = ""
+not c # True
+d = "hello"
+not d # False
+not True # False
+not False # True
+```
 
 ## 转换
 数字-->字符串：`str(34)`
@@ -196,4 +212,5 @@ else:
 
 ## 常用方法
 1. 判断变量/值类型——`type`
-type(True) # <class 'bool'>
+
+`type(True)`--> <class 'bool'>
