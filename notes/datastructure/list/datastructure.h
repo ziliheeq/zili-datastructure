@@ -37,4 +37,8 @@ void PrintList(const SqList* L);
 
 Status GetListLinkElem(LinkList L, size_t i, ElemType *e);
 Status LinkListInit(size_t length);
+Status LinkListInsert(LinkList* L, size_t i, ElemType e);
+Status LinkListDelete(LinkList* L, size_t i, ElemType* e);
+void LinkListCreateHead(LinkList* L, size_t n);
+void LinkListCreateTail(LinkList* L, size_t n);
 void PrintLinkList(const LinkList L);

@@ -26,11 +26,12 @@ static SqList generator(int length) {
 }
 
 static void LinkListGen(LinkList L, int length) {
+    LinkList head = L;
     size_t i;
-    LinkList head;
-    head->next = L;
     for (i = 0; i < length; ++i) {
-        L->data = i * i + 2;
+        LinkList T;
+        T->data = 12 * i + 2;
+        L->next = T;
         L = L->next;
     }
     L->next = NULL;
@@ -68,12 +69,13 @@ void test_del_elements(){
     EXPECT_EQ_INT(a.length, 8);
 }
 
+/*
 test_link_list_get_element() {
     LinkList L;
     LinkListGen(L, 10);
     PrintLinkList(L);
-
 }
+*/
 
 
 int main() {
