@@ -1,6 +1,12 @@
 #include <stdlib.h> /* size_t */
 #include "datastructure.h"
 
+
+/*
+线性表顺序存储结构
+*/
+
+
 /* 获取元素 i 从 1 到 length */
 Status GetElem(SqList L, size_t i, ElemType* e) {
     if (L.length == 0)
@@ -61,4 +67,38 @@ void PrintList(const SqList* L) {
     for (i = 0; i < L->length; ++i) 
         printf(" %d ", L->data[i]);
     printf("]\n");
+}
+
+
+/*
+线性表——链表
+*/
+Status GetListLinkElem(LinkList L, size_t i, ElemType* e) {
+    size_t j;
+    LinkList p = L->next;
+    j = 1;
+
+    while(p && j < i) {
+        p = p->next;
+        ++j;
+    }
+    if (!p || j > i)
+        return ELEMENT_IS_NOT_EXIST;
+    
+    *e = p->data;
+    return RUN_SUCCESS;
+}
+
+
+/* 初始化链表 */
+Status LinkListInit(LinkList L, size_t length) {
+    if (length < 1) return LENGTH_IS_NEGATIVE;
+
+}
+void PrintLinkList(const LinkList L) {
+    LinkList T = L;
+    while(L) {
+        printf(" %d ", L->data);
+        T = T->next;
+    }
 }
