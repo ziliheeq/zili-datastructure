@@ -187,7 +187,8 @@ else:
 'true' if True else 'false'  # 'true'
 'true' if False else 'false' # 'false'
 ```
-4. `not` 运算符
+4. 布尔运算符
+`not` 运算符--可以用在条件语句中作为反向判断
 ```python
 not 0 # True
 not 1 # False
@@ -203,7 +204,42 @@ not d # False
 not True # False
 not False # True
 ```
+`and` -- 和，A and B, A 和 B 同时为真是才为真
 
+`or`  -- 或，A or B, A 和 B 中一个为真就为真
+
+`==`  -- 判断是否相等
+
+`!=`  -- 判断是否不等
+
+`>, <, >=, <=`  -- 大小判断
+
+`is`：x is x 是`True`，x is y 如果 x 和 y 是同一个对象则是`True`
+
+浅拷贝是同一个对象
+![image](https://user-images.githubusercontent.com/35592711/169959957-756e1174-9728-4231-8985-9bcd832d458d.png)
+
+深拷贝不是同一个对象
+![image](https://user-images.githubusercontent.com/35592711/169959996-da0db2d2-6666-4a9d-af8a-74bd8649bcaf.png)
+
+`in`: 判断是否在集合中
+![image](https://user-images.githubusercontent.com/35592711/169969408-fc695035-4637-4923-9f78-96f1b675773f.png)
+
+另：用在`for`循环遍历使用
+```python
+# list
+for i in [1,2, 3,4]:
+    print(i)
+# 1, 2, 3, 4
+
+# 自动生成的list，range()函数也和切片类似，range([开始索引包括],[结束索引不包括],[间隔])
+# range(1, 10, 2) --> 1, 3, 5, 7, 9
+for i in range(10):
+    print(i)
+# 0, 1, 2, 3, ..., 9
+
+
+```
 ## 转换
 数字-->字符串：`str(34)`
 
