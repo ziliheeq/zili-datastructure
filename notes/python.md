@@ -111,6 +111,57 @@ c[1] = 222
 ```
 类用户要定义自己的拷贝实现方式，需要定义浅拷贝方法`__copy__()`和深拷贝方法`__deepcopy__()`
 
+4. 添加元素`append`
+```python
+a = [1, 3, 4]
+a.append(44) # a  = [1, 3, 4, 44]
+```
+5. 嵌套-->`[[1, 2, 3], [2, 3], 4]`; `a[0][1]=2`
+
+6. 长度--> len([1, 3, 4]) --> 3
+
+## 函数
+python 交换两个值
+```python
+# python
+a = 100
+b = 200
+a, b = b, a
+# a = 200, b = 100
+```
+```c
+/* c lang */
+/* 需要中间变量 c */
+void swap(int* a, int* b){
+    int c = *a;
+    *a = *b;
+    *b = c;
+}
+```
+[第一个函数](https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming)
+```python
+# 斐波那契数列：1, 1, 2, 3, 5, 8, 13, 21, 34, 55...[前两个值相加]
+def fibonacci(max):
+    a, b = 1, 1
+    res = [a, b]
+    while( a+b < max):
+        a, b = b, a+b
+        res.append(b)
+ 
+    # 返回一个list
+    return res
+
+# 将 python 文件[.py]直接执行，这条判断为真
+# 会执行其下条件
+if __name__ == '__main__':
+    # __name__ 为python自身定义全局变量
+    print(__name__)
+    print(fibonacci(25))
+```
+![image](https://user-images.githubusercontent.com/35592711/169952598-78bcf399-8068-46f3-8fec-7b66eae7651d.png)
+
+
 ## 转换
 数字-->字符串：`str(34)`
 
+字符-->列表：`list("hello") --> ['h', 'e', 'l', 'l', 'o']
