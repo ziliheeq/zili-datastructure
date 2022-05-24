@@ -60,3 +60,15 @@ for (i = 0; i < n; ++i) {
 线性表顺序存储结构适合元素个数不大变化的，更多是存取数据的应用。
 
 链式存储：用一组任意的存储单元存储线性表的数据元素，存储单元可以是连续的，也可以是不连续的。
+
+链表定义:
+
+[struct 的自引用](https://stackoverflow.com/questions/588623/self-referential-struct-definition)
+```c
+/* 线性表——链表 */
+typedef struct Node {
+    ElemType data;
+    /* 不能包含 Node 的常量，这样会是不会结束的递归调用，可以包含 Node 的指针 */
+    struct Node* next;
+} Node;
+```

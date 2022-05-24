@@ -22,9 +22,19 @@ static SqList generator(int length) {
     a.length = length;
     for (i = 0; i < length; ++i) 
         a.data[i] = i * i + 11;
-    printf("generator result ---> ");
-    PrintList(&a); 
     return a;       
+}
+
+static void LinkListGen(LinkList L, int length) {
+    size_t i;
+    LinkList head;
+    head->next = L;
+    for (i = 0; i < length; ++i) {
+        L->data = i * i + 2;
+        L = L->next;
+    }
+    L->next = NULL;
+    L = head;
 }
 
 void test_get_elements(){
@@ -53,12 +63,18 @@ void test_del_elements(){
     EXPECT_EQ_INT(res, 20);
     EXPECT_EQ_INT(a.length, 9);
 
-    PrintList(&a);
     EXPECT_EQ_INT(0, DeleteElem(&a, 9, &res));
     EXPECT_EQ_INT(res, 92);
     EXPECT_EQ_INT(a.length, 8);
-    PrintList(&a);
 }
+
+test_link_list_get_element() {
+    LinkList L;
+    LinkListGen(L, 10);
+    PrintLinkList(L);
+
+}
+
 
 int main() {
     test_get_elements();
