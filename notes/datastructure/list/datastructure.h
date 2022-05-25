@@ -41,4 +41,12 @@ Status LinkListInsert(LinkList* L, size_t i, ElemType e);
 Status LinkListDelete(LinkList* L, size_t i, ElemType* e);
 void LinkListCreateHead(LinkList* L, size_t n);
 void LinkListCreateTail(LinkList* L, size_t n);
+Status ClearList(LinkList* L);
 void PrintLinkList(const LinkList L);
+
+/* 静态链表 */
+#define MAXSIZLINKLIST 1000
+typedef struct {
+    ElemType data;
+    int cur;
+} Component, StaticLinkList[MAXSIZLINKLIST];

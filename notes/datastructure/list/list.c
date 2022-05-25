@@ -96,7 +96,9 @@ Status LinkListInit(LinkList L, size_t length) {
 
 } */
 void PrintLinkList(const LinkList L) {
-    LinkList T = L;
+    LinkList ptr;
+    LinkList p;
+
     while(L) {
         printf(" %d ", L->data);
         T = T->next;
@@ -181,4 +183,18 @@ void LinkListCreateTail(LinkList* L, size_t n) {
         r = p;
     }
     r->next = NULL;
+}
+
+/* 清空链表 */
+Status ClearList(LinkList* L) {
+    LinkList p, q;
+    p = (*L)->next;
+    while (p) {
+        q = p->next;
+        free(p);
+        p = q;
+    }
+    (*L)->next = NULL;
+
+    return RUN_SUCCESS;
 }
