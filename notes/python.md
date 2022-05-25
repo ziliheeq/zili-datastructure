@@ -216,6 +216,7 @@ not False # True
 
 `is`：x is x 是`True`，x is y 如果 x 和 y 是同一个对象则是`True`
 
+`链式比较`: `1 < 2 and 2 < 3` --> True
 浅拷贝是同一个对象
 ![image](https://user-images.githubusercontent.com/35592711/169959957-756e1174-9728-4231-8985-9bcd832d458d.png)
 
@@ -237,9 +238,11 @@ for i in [1,2, 3,4]:
 for i in range(10):
     print(i)
 # 0, 1, 2, 3, ..., 9
-
+"beautiful" in "hello beautiful world" # True
 
 ```
+[其他参考](https://realpython.com/python-boolean/)
+
 ## 转换
 数字-->字符串：`str(34)`
 
