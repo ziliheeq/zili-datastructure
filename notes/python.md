@@ -66,7 +66,7 @@ python 的 [string 内存](https://rushter.com/blog/python-strings-and-memory/)
 
 每个python字符串会占用额外的`49-80`个字节的内存空间，用来存储附加信息，如`hash`，`长度`,`字节长度`,`编码类型`,`字符串标志`，所以空字符串也会有`49`个字节大小`sys.getsizeof("")`。
 
-
+[参考](https://rushter.com/blog/python-strings-and-memory/)
 
 ## 列表——lists
 1. 空列表：a = []
