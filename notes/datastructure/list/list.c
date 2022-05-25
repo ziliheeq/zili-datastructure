@@ -90,15 +90,95 @@ Status GetListLinkElem(LinkList L, size_t i, ElemType* e) {
 }
 
 
-/* 初始化链表 */
+/* 初始化链表
 Status LinkListInit(LinkList L, size_t length) {
     if (length < 1) return LENGTH_IS_NEGATIVE;
 
-}
+} */
 void PrintLinkList(const LinkList L) {
     LinkList T = L;
     while(L) {
         printf(" %d ", L->data);
         T = T->next;
     }
+}
+
+/* 1 < i < ListLength(L) */
+/* 在 L 中底 i 位置之前插入新的数据元素 e， L 的长度加 1 */
+Status LinkListInsert(LinkList* L, size_t i, ElemType e) {
+    size_t j;
+    LinkList p, s;
+
+    p = *L;
+    j = 1;
+    while (p && j < i) {
+        p = p->next;
+        ++j;
+    }
+
+    if (!p || j > i)
+        return ELEMENT_IS_NOT_EXIST;
+    s = (LinkList)malloc(sizeof(Node)); /* 生成新节点 */
+    s->data = e;
+    s->next = p->next;
+    p->next = s;
+    return RUN_SUCCESS;
+}
+
+/* 链表删除元素 */
+Status LinkListDelete(LinkList* L, size_t i, ElemType* e) {
+    size_t j;
+    LinkList p, q;
+
+    p = *L;
+    j = 1;
+    /* 因为有一个头指针，没有数据 */
+    while (p->next && j < i) {
+        p = p->next;
+        ++j;
+    }
+    if(!(p->next) || j > i)
+        return ELEMENT_IS_NOT_EXIST;
+    q = p->next;
+    p = p->next;
+    *e = p->data;
+    free(q);
+    return RUN_SUCCESS;
+}
+
+
+/* 头插法 */
+void LinkListCreateHead(LinkList* L, size_t n) {
+    LinkList p;
+    size_t i;
+
+    srand(time(0));
+    /* 建立一个带头结点的单链表 */
+    *L = (LinkList)malloc(sizeof(Node));
+    (*L)->next = NULL;
+
+    for (i = 0; i < n; ++i) {
+        p = (LinkList)malloc(sizeof(Node));
+        p->data = rand() % 100 + 1; /* 随机生成100以内的数字 */
+        p->next = (*L)->next;
+        (*L)->next = p->next; /* 插入到表头 */
+    }
+}
+
+/* 尾插法 */
+void LinkListCreateTail(LinkList* L, size_t n) {
+    LinkList p, r;
+    size_t i;
+
+    srand(time(0));
+    *L = (LinkList) malloc(sizeof(Node));
+    r = *L;
+
+    for (i = 0; i < n; ++i) {
+        p = (Node*)malloc(sizeof(Node));
+        p->data = rand() % 100 + 1;
+        r->next = p;
+        r = p;
+    }
+    r->next = NULL;
 }

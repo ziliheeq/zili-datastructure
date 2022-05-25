@@ -72,3 +72,4 @@ typedef struct Node {
     struct Node* next;
 } Node;
 ```
+对于插入或者删除数据频繁的操作，单链表的效率优势就越明显。
