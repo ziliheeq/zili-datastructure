@@ -185,16 +185,17 @@ void LinkListCreateTail(LinkList* L, size_t n) {
     r->next = NULL;
 }
 
-/* 清空链表 */
-Status ClearList(LinkList* L) {
-    LinkList p, q;
-    p = (*L)->next;
-    while (p) {
-        q = p->next;
-        free(p);
-        p = q;
-    }
-    (*L)->next = NULL;
+Status InitStaticLinkList(StaticLinkList space){
+    size_t i;
+    for (i = 0; i < SMAXSIZE - 1; ++i) 
+        space[i].cur = i + 1;
+    space[SMAXSIZE-1].cur = 0;
 
     return RUN_SUCCESS;
+}
+
+Status StaticListInsert(StaticLinkList L, size_t i, ElemType e) {
+    int j, k, l;
+    k = SMAXSIZE - 1;
+    if (i < 1 || i > ListLen)
 }

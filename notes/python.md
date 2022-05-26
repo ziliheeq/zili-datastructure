@@ -66,7 +66,7 @@ python 的 [string 内存](https://rushter.com/blog/python-strings-and-memory/)
 
 每个python字符串会占用额外的`49-80`个字节的内存空间，用来存储附加信息，如`hash`，`长度`,`字节长度`,`编码类型`,`字符串标志`，所以空字符串也会有`49`个字节大小`sys.getsizeof("")`。
 
-
+[参考](https://rushter.com/blog/python-strings-and-memory/)
 
 ## 列表——lists
 1. 空列表：a = []
@@ -216,6 +216,7 @@ not False # True
 
 `is`：x is x 是`True`，x is y 如果 x 和 y 是同一个对象则是`True`
 
+`链式比较`: `1 < 2 and 2 < 3` --> True
 浅拷贝是同一个对象
 ![image](https://user-images.githubusercontent.com/35592711/169959957-756e1174-9728-4231-8985-9bcd832d458d.png)
 
@@ -237,9 +238,11 @@ for i in [1,2, 3,4]:
 for i in range(10):
     print(i)
 # 0, 1, 2, 3, ..., 9
-
+"beautiful" in "hello beautiful world" # True
 
 ```
+[其他参考](https://realpython.com/python-boolean/)
+
 ## 转换
 数字-->字符串：`str(34)`
 
