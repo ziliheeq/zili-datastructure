@@ -194,8 +194,45 @@ Status InitStaticLinkList(StaticLinkList space){
     return RUN_SUCCESS;
 }
 
+size_t StaticLinkListLength(StaticLinkList L) {
+    size_t length = 0;
+    size_t i = L[SMAXSIZE-1].cur;
+    while (i != 0) {
+        i = L[i].cur;
+        length++;
+    }
+    
+    return length;
+}
+
 Status StaticListInsert(StaticLinkList L, size_t i, ElemType e) {
     int j, k, l;
     k = SMAXSIZE - 1;
-    if (i < 1 || i > ListLen)
+    if (i < 1 || i > StaticLinkListLength(L) - 1)
+        return OUT_OF_INDEX;
+    j = Malloc_SLL(L);
+
+    if (j) {
+        L[j].data = e;
+        for (l = 1; l < i; l++) {
+            k = L[k].cur;
+        }
+        L[j].cur = L[k].cur;
+        L[k].cur = j;
+        return RUN_SUCCESS;
+    } 
+    else
+        return STATIC_MEMORY_IS_NOT_ENOUGH;
+}
+
+Status StaticLinkDelete(StaticLinkList L, size_t i) {
+    int j, k;
+    if (i < 1 || i > StaticLinkListLength(L))
+        return OUT_OF_INDEX;
+    k = SMAXSIZE - 1;
+    for (j = 1; j < i; j++) {
+        k = L[k].cur;
+    }
+    j = L[k].cur;
+    
 }

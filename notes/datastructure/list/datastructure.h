@@ -5,6 +5,7 @@ enum {
     LIST_IS_EMPTY,
     ELEMENT_IS_NOT_EXIST,
     LENGTH_IS_NEGATIVE,
+    STATIC_MEMORY_IS_NOT_ENOUGH,
     FASLE = 0,
     TRUE = 1
 };
@@ -61,4 +62,11 @@ int Malloc_SLL(StaticLinkList space) {
     return i;
 }
 
+void Free_SLL(StaticLinkList space, size_t i) {
+    space[0].cur = i;
+
+}
+
 Status StaticListInsert(StaticLinkList L, size_t i, ElemType e);
+size_t StaticLinkListLength(StaticLinkList L);
+Status StaticLinkDelete(StaticLinkList L, size_t i);
