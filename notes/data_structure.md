@@ -80,3 +80,28 @@ typedef struct Node {
 
 双向链表：在单链表中添加一个指向前驱结点的指针域。
 
+---
+
+栈和队列
+
+栈：数据先放入，后拿出。——限定仅在表尾进行插入和删除操作的`线性表`。
+```c
+typedef struct {
+    SElemType data[MAXSIZE];
+    int top;  /* 栈顶指针 */
+} SqStack;
+```
+
+操作：新增元素——压栈，删除元素——弹栈
+
+空栈判断，tip = -1
+
+栈共享空间，两个栈（数据类型要一样）使用同一个数组栈，从首和尾分别开始累积栈，有两个栈顶指针。
+```c
+/* 两个栈共享空间结构 */
+typedef struct {
+    SElemType data[MAXSIZE];
+    int top1;  /* 栈 1 --栈顶指针 */
+    int top2;  /* 栈 2 --栈顶指针 */
+} SqDoubleStack;
+```
