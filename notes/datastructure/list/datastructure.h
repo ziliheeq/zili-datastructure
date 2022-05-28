@@ -71,3 +71,9 @@ Status StaticListInsert(StaticLinkList L, size_t i, ElemType e);
 size_t StaticLinkListLength(StaticLinkList L);
 Status StaticLinkDelete(StaticLinkList L, size_t i);
 
+/* 双向链表 */
+typedef struct DulNode {
+    ElemType data;
+    struct DulNode* prior;
+    struct DulNode* next;
+} DulNode， *DuLinkList;
