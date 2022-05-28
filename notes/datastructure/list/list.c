@@ -1,4 +1,4 @@
-#include <stdlib.h> /* size_t */
+你#include <stdlib.h> /* size_t */
 #include "datastructure.h"
 
 
@@ -234,5 +234,5 @@ Status StaticLinkDelete(StaticLinkList L, size_t i) {
         k = L[k].cur;
     }
     j = L[k].cur;
-    
 }
+

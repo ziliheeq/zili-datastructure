@@ -70,3 +70,4 @@ void Free_SLL(StaticLinkList space, size_t i) {
 Status StaticListInsert(StaticLinkList L, size_t i, ElemType e);
 size_t StaticLinkListLength(StaticLinkList L);
 Status StaticLinkDelete(StaticLinkList L, size_t i);
+
