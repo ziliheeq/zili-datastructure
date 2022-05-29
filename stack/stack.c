@@ -58,3 +58,17 @@ Status LPush(LinkStack* s, SElemType e) {
     s->count++;
     return RUN_SUCCESS;
 }
+
+
+
+Status LPop(LinkStack* s, SElemType* e) {
+    LinkStackPtr p = s->top;
+    
+    if (StackEmpty(s))
+        return STACK_IS_EMPTY;
+    *e = p->data;
+    free(p);
+    s->count--;
+
+    return RUN_SUCCESS;
+}

@@ -45,3 +45,13 @@ typedef struct LinkStack {
 
 Status LPush(LinkStack* s, SElemType e);
 Status LPop(LinkStack* s, SElemType* e);
+
+enum {
+    FALSE,
+    TRUE
+};
+Status StackEmpty(const LinkStack* s) {
+    if (s->top == NULL)
+        return TRUE;
+    return FALSE;
+}
