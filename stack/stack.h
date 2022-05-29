@@ -1,3 +1,6 @@
+#ifndef STACK_H__
+#define STACK_H__
+
 #include <stdlib.h>
 
 typedef int SElemType;
@@ -50,8 +53,9 @@ enum {
     FALSE,
     TRUE
 };
-Status StackEmpty(const LinkStack* s) {
-    if (s->top == NULL)
-        return TRUE;
-    return FALSE;
-}
+
+int isStackEmpty(const LinkStack* s);
+
+/*斐波那契数列递归函数*/
+int Fbi(int i);
+#endif

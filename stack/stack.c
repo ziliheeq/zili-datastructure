@@ -54,17 +54,22 @@ Status LPush(LinkStack* s, SElemType e) {
     LinkStackPtr node = (LinkStackPtr) malloc(sizeof(StackNode));
     node->data = e;
     node->next = s->top;
-    s->top = s;
+    s->top = node;
     s->count++;
     return RUN_SUCCESS;
 }
 
-
+int isStackEmpty(const LinkStack* s) {
+    if (s->top == NULL)
+        return TRUE;
+    else
+        return FALSE;
+}
 
 Status LPop(LinkStack* s, SElemType* e) {
     LinkStackPtr p = s->top;
     
-    if (StackEmpty(s))
+    if (isStackEmpty(s))
         return STACK_IS_EMPTY;
     *e = p->data;
     free(p);
@@ -72,3 +77,12 @@ Status LPop(LinkStack* s, SElemType* e) {
 
     return RUN_SUCCESS;
 }
+
+int Fbi(int i) {
+    if (i < 2)
+        return i == 0? 0 : 1;
+    else
+        return Fbi(i-1) + Fbi(i - 2);
+}
+
+
