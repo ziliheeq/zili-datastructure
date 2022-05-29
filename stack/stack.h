@@ -30,3 +30,18 @@ typedef struct {
 
 Status DPush(SqDoubleStack* s, SElemType e, size_t stackNum);
 Status DPop(SqDoubleStack* s, SElemType* e, size_t stackNum);
+
+/* 链表 */
+typedef struct StackNode {
+    SElemType data;
+    struct StackNode *next;
+} StackNode, *LinkStackPtr;
+
+/* 链表栈 */
+typedef struct LinkStack {
+    LinkStackPtr top;
+    int count;
+} LinkStack;
+
+Status LPush(LinkStack* s, SElemType e);
+Status LPop(LinkStack* s, SElemType* e);

@@ -105,3 +105,5 @@ typedef struct {
     int top2;  /* 栈 2 --栈顶指针 */
 } SqDoubleStack;
 ```
+
+栈的链式存储结构——为空——`top = NULL`

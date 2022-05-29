@@ -48,3 +48,13 @@ Status DPop(SqDoubleStack* s, SElemType* e, size_t stackNum) {
         return SHARED_STACK_NUMBER_WRONG;
     return RUN_SUCCESS;
 }
+
+Status LPush(LinkStack* s, SElemType e) {
+    /*链表栈不会满*/
+    LinkStackPtr node = (LinkStackPtr) malloc(sizeof(StackNode));
+    node->data = e;
+    node->next = s->top;
+    s->top = s;
+    s->count++;
+    return RUN_SUCCESS;
+}
