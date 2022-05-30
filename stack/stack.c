@@ -86,3 +86,69 @@ int Fbi(int i) {
 }
 
 
+Status InitQueue(SqQueue* q) {
+    q->front = 0;
+    q->rear = 0;
+    return RUN_SUCCESS;
+}
+
+size_t QueueLength(const SqQueue* q) {
+    return (q->rear - q->front + MAXSIZE) % MAXSIZE;
+}
+
+Status EnQueue(SqQueue* q, QElemType e) {
+    if ((q->rear + 1) % MAXSIZE == q->front)
+        return QUEUE_IS_FULL;
+    /*
+    else if (q->rear == MAXSIZE - 1) {
+        q->data[q->rear] = e;
+        q->rear == 0;
+    }
+    else {
+        q->data[q->rear] = e;
+        q->rear++;
+    }
+    */
+   q->data[q->rear] = e;
+   q->rear = (q->rear+1) % MAXSIZE;  /* 这里的处理很巧妙，到最后就会转到数组头部 */
+   
+   return RUN_SUCCESS;
+}
+
+Status DeQueue(SqQueue* q, QElemType* e) {
+    if (q->front == q->rear)
+        return QUEUE_IS_EMPTY;
+    *e = q->data[q->front];
+    q->front = (q->front + 1) % MAXSIZE;
+
+    return RUN_SUCCESS;
+}
+
+
+Status LEnQueue(LinkQueue* q, QElemType e) {
+    QueuePtr s = (QueuePtr) malloc(sizeof(QNode));
+    if(!s)
+        exit(MEM_OVERFLOW);
+    s->next = NULL;
+    s->data = e;
+    q->rear->next = s;
+    q->rear = s; /* 将 s 设置 */
+
+    return RUN_SUCCESS;
+}
+
+Status LDeQueue(LinkQueue* q, QElemType* e) {
+    if (q->rear == q->front)
+         return QUEUE_IS_EMPTY;
+    
+    QueuePtr p = q->front->next;
+    *e = p->data;
+    q->front->next = p->next;
+
+    /* 若只有一个元素 */
+    if (p == q->rear)
+         q->front = q->rear;
+    free(p);
+
+    return RUN_SUCCESS;
+}
