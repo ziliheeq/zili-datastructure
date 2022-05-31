@@ -128,3 +128,5 @@ typedef struct {
 
 `tcpl`--[`The C programming language`](https://book.douban.com/subject/1236999/)
 
+C语言冬天内存分配 malloc 和 free，管理自有存储区——堆。
+
