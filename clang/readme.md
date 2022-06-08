@@ -55,7 +55,12 @@ size_t strlen(const char* s) {
     return s-p;
 }
 ```
-字符串连接函数
+字符串连接函数，注意一定要保证 s1 的长度够存储两个字符串的长度，否则会出错--segmentation falut。
+```
+A segmentation fault occurs when a program attempts to access a memory location that it is not allowed to access, 
+or attempts to access a memory location in a way that is not allowed (for example, attempting to write to 
+a read-only location, or to overwrite part of the operating system).
+```s
 ```c
 /*字符串连接*/
 char* strcat(char* s1, const char* s2) {
@@ -72,6 +77,9 @@ char* strcat(char* s1, const char* s2) {
     */
     /* 
       先赋值，判断 s2 的值是否是空字符
+      while语句会测试赋值表达式的值，也就是测试复制的字符。除空字符以外的所有字符的测试结果都为真
+      循环只有在复制空字符后才会终止
+      由于循环是在赋值之后结束的，所以不用在最后补充空字符。
     */
     while(*p++ = *s2++)
         ;
