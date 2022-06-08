@@ -38,4 +38,20 @@ int readLine(char str[], int n) {
     return i;
 }
 ```
+> 字符串
 
+条件*s != '\0'与*s != 0是一样的，因为空字符的整数值就是0。
+
+长度的计算方法，通过空字符所在的指针位置，减去首只针对位置，得到长度。
+```c
+size_t strlen(const char* s) {
+    size_t n = 0;
+    /*for (; *s != '\0'; s++)*/
+    /*for (; *s; s++)*/
+    /*for (; *s++;)*/
+    const char* p = s;
+    while(*s)
+        s++;
+    return s-p;
+}
+```
