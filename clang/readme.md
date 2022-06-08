@@ -55,3 +55,26 @@ size_t strlen(const char* s) {
     return s-p;
 }
 ```
+字符串连接函数
+```c
+/*字符串连接*/
+char* strcat(char* s1, const char* s2) {
+    char* p = s1;
+    while(*p)
+        p++;
+    
+    /*
+    while(*s2) {
+        *p = *s2;
+        p++;
+        s2++;
+    }
+    */
+    /* 
+      先赋值，判断 s2 的值是否是空字符
+    */
+    while(*p++ = *s2++)
+        ;
+    return s1;
+}
+```
