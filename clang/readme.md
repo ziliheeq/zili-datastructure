@@ -104,3 +104,7 @@ int main(int argc, char* argv[]) {
 执行命令：`mystring.exe 膏雨初晴 东边日出西边雨 道是无晴却有晴`
 
 结果：`there pass arg count = 4, and they are:  F:\local\c-lang\out\mystring.exe,  膏雨初晴,  东边日出西边雨,  道是无晴却有晴,`
+
+<string.h>
+
+`strcmp(const char* _str1, const char* _str2)`函数，传入两个字符串，按字典序对比，`=0`--相等，`<0`--_str1 < _str2， `>0`--_str1 > _str2
