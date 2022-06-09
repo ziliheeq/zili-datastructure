@@ -108,3 +108,5 @@ int main(int argc, char* argv[]) {
 <string.h>
 
 `strcmp(const char* _str1, const char* _str2)`函数，传入两个字符串，按字典序对比，`=0`--相等，`<0`--_str1 < _str2， `>0`--_str1 > _str2
+
+直接输出字符串`printf(str);`，这样的做法是危险的，如果str中含有`%`，会认为是转换说明的开始，无法输出预想结果。
