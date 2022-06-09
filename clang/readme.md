@@ -86,3 +86,21 @@ char* strcat(char* s1, const char* s2) {
     return s1;
 }
 ```
+
+命令行参数
+
+通过 `main(int argc, char* argv[])`接收参数，argc是参数个数，argv是参数列表，argv[0]代表第一个参数即生成可执行文件本身绝对路径。
+```c
+int main(int argc, char* argv[]) {
+    printf("there pass arg count = %d, and they are: ", argc);
+    int i;
+    for (i = 0; i < argc; ++i)
+        printf(" %s, ", argv[i]);
+    printf("\n");
+}
+```
+编译生成可执行文件`mystring.exe`。
+
+执行命令：`mystring.exe 膏雨初晴 东边日出西边雨 道是无晴却有晴`
+
+结果：`there pass arg count = 4, and they are:  F:\local\c-lang\out\mystring.exe,  膏雨初晴,  东边日出西边雨,  道是无晴却有晴,`
